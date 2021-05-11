@@ -9,6 +9,19 @@ _values: {
 	instance:          "vector:9598"
 }
 
+// `#AcknowledgementsStatus` documents the status of end-to-end
+// acknowledgements for a source or sink.
+//
+// * `enabled` - On a source, indicates it will wait for
+// acknowledgements on all incoming events before responding to
+// the request. On a sink, indicates it will mark events with the
+// final delivery status.
+// * `disabled` - Indicates the source or sink does not actively
+// participate in handling acknowledgements.
+// * `not_applicable` - Indicates the source cannot acknowledge
+// the transmission of data.
+#AcknowledgementsStatus: "enabled" | "disabled" | "not_applicable"
+
 // `#Any` allows for any value.
 #Any: *_ | {[_=string]: #Any}
 

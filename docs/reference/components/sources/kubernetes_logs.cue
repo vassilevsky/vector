@@ -11,8 +11,9 @@ components: sources: kubernetes_logs: {
 		"""
 
 	classes: {
-		commonly_used: true
-		delivery:      "best_effort"
+		acknowledgements: "disabled"
+		commonly_used:    true
+		delivery:         "best_effort"
 		deployment_roles: ["daemon"]
 		development:   "stable"
 		egress_method: "stream"

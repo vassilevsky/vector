@@ -10,8 +10,9 @@ components: sources: datadog_logs: {
 		"""
 
 	classes: {
-		commonly_used: false
-		delivery:      "at_least_once"
+		acknowledgements: "disabled"
+		commonly_used:    false
+		delivery:         "at_least_once"
 		deployment_roles: ["aggregator", "sidecar"]
 		development:   "beta"
 		egress_method: "batch"

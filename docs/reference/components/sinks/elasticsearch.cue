@@ -4,10 +4,11 @@ components: sinks: elasticsearch: {
 	title: "Elasticsearch"
 
 	classes: {
-		commonly_used: true
-		delivery:      "at_least_once"
-		development:   "stable"
-		egress_method: "batch"
+		acknowledgements: "disabled"
+		commonly_used:    true
+		delivery:         "at_least_once"
+		development:      "stable"
+		egress_method:    "batch"
 		service_providers: ["AWS", "Azure", "Elastic", "GCP"]
 		stateful: false
 	}

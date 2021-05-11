@@ -4,10 +4,11 @@ components: sinks: aws_cloudwatch_metrics: components._aws & {
 	title: "AWS Cloudwatch Metrics"
 
 	classes: {
-		commonly_used: false
-		delivery:      "at_least_once"
-		development:   "stable"
-		egress_method: "batch"
+		acknowledgements: "disabled"
+		commonly_used:    false
+		delivery:         "at_least_once"
+		development:      "stable"
+		egress_method:    "batch"
 		service_providers: ["AWS"]
 		stateful: false
 	}

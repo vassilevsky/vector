@@ -5,8 +5,9 @@ components: sources: postgresql_metrics: {
 	description: "[PostgreSQL][urls.postgresql] PostgreSQL is a powerful, open source object-relational database system with over 30 years of active development that has earned it a strong reputation for reliability, feature robustness, and performance."
 
 	classes: {
-		commonly_used: false
-		delivery:      "at_least_once"
+		acknowledgements: "not_applicable"
+		commonly_used:    false
+		delivery:         "at_least_once"
 		deployment_roles: ["daemon", "sidecar"]
 		development:   "beta"
 		egress_method: "batch"

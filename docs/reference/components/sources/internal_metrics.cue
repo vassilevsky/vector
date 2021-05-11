@@ -9,8 +9,9 @@ components: sources: internal_metrics: {
 		"""
 
 	classes: {
-		commonly_used: true
-		delivery:      "at_least_once"
+		acknowledgements: "not_applicable"
+		commonly_used:    true
+		delivery:         "at_least_once"
 		deployment_roles: ["aggregator", "daemon", "sidecar"]
 		development:   "beta"
 		egress_method: "batch"

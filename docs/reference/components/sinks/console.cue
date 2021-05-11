@@ -4,10 +4,11 @@ components: sinks: console: {
 	title: "Console"
 
 	classes: {
-		commonly_used: false
-		delivery:      "at_least_once"
-		development:   "stable"
-		egress_method: "stream"
+		acknowledgements: "disabled"
+		commonly_used:    false
+		delivery:         "at_least_once"
+		development:      "stable"
+		egress_method:    "stream"
 		service_providers: []
 		stateful: false
 	}

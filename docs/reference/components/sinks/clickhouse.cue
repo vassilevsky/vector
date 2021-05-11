@@ -4,10 +4,11 @@ components: sinks: clickhouse: {
 	title: "Clickhouse"
 
 	classes: {
-		commonly_used: true
-		delivery:      "at_least_once"
-		development:   "beta"
-		egress_method: "batch"
+		acknowledgements: "disabled"
+		commonly_used:    true
+		delivery:         "at_least_once"
+		development:      "beta"
+		egress_method:    "batch"
 		service_providers: ["Yandex"]
 		stateful: false
 	}

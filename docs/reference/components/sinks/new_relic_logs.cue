@@ -4,10 +4,11 @@ components: sinks: new_relic_logs: {
 	title: "New Relic Logs"
 
 	classes: {
-		commonly_used: false
-		delivery:      "at_least_once"
-		development:   "stable"
-		egress_method: "batch"
+		acknowledgements: "disabled"
+		commonly_used:    false
+		delivery:         "at_least_once"
+		development:      "stable"
+		egress_method:    "batch"
 		service_providers: ["New Relic"]
 		stateful: false
 	}

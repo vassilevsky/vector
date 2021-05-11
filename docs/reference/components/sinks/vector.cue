@@ -8,10 +8,11 @@ components: sinks: vector: {
 		"""
 
 	classes: {
-		commonly_used: false
-		delivery:      "best_effort"
-		development:   "beta"
-		egress_method: "stream"
+		acknowledgements: "disabled"
+		commonly_used:    false
+		delivery:         "best_effort"
+		development:      "beta"
+		egress_method:    "stream"
 		service_providers: []
 		stateful: false
 	}

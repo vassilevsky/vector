@@ -474,6 +474,7 @@ urls: {
 	vector_reduce_transform:                                  "\(vector_website)/docs/reference/configuration/transforms/reduce/"
 	vector_release_policy:                                    "https://github.com/timberio/vector/blob/master/RELEASING.md"
 	vector_remap_transform:                                   "\(vector_website)/docs/reference/configuration/transforms/remap/"
+	vector_remap_transform_multiple:                          "\(vector_website)/docs/reference/configuration/transforms/remap/#emitting-multiple-log-events"
 	vector_repo:                                              "\(github)/timberio/vector"
 	vector_roadmap:                                           "https://roadmap.vector.dev"
 	vector_rpm_source_files:                                  "\(vector_repo)/tree/master/distribution/rpm"

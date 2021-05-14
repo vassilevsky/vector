@@ -6,7 +6,7 @@ components: sources: statsd: {
 	title: "StatsD"
 
 	classes: {
-		acknowledgements: "disabled"
+		acknowledgements: "not_applicable"
 		commonly_used:    false
 		delivery:         "best_effort"
 		deployment_roles: ["aggregator"]

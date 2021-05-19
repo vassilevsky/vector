@@ -23,10 +23,11 @@ support specific guarantees.
 This indicates that acknowledgements are fully supported for the given
 source or sink component.
 
-For a source, this means that the component is both able, at a protocol
-level, to indicate to the sender of the events a status code when and if
-the events are delivered, and that the source waits until this status is
-available for all the events in a batch.
+For a source, this means that the component is both able to indicate to
+the sender of the events a status code when and if the events are
+delivered at a protocol level, and that the source waits internally
+until this status is available for all the events in a batch before
+reporting that status.
 
 For a sink, this means the component is both able to determine if events
 are accepted by the destination, and communicates this status once

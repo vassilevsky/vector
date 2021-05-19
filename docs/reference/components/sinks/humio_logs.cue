@@ -4,7 +4,7 @@ components: sinks: humio_logs: {
 	title: "Humio Logs"
 
 	classes: sinks._humio.classes & {
-		acknowledgements: "disabled"
+		delivery: "best_effort"
 	}
 	features:      sinks._humio.features
 	support:       sinks._humio.support

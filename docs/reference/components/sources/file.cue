@@ -6,9 +6,8 @@ components: sources: file: {
 	title: "File"
 
 	classes: {
-		acknowledgements: "disabled"
-		commonly_used:    true
-		delivery:         "best_effort"
+		commonly_used: true
+		delivery:      "best_effort"
 		deployment_roles: ["daemon", "sidecar"]
 		development:   "stable"
 		egress_method: "stream"

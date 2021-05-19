@@ -4,11 +4,10 @@ components: sinks: influxdb_logs: {
 	title: "InfluxDB Logs"
 
 	classes: {
-		acknowledgements: "disabled"
-		commonly_used:    false
-		delivery:         "at_least_once"
-		development:      "stable"
-		egress_method:    "batch"
+		commonly_used: false
+		delivery:      "best_effort"
+		development:   "stable"
+		egress_method: "batch"
 		service_providers: ["InfluxData"]
 		stateful: false
 	}

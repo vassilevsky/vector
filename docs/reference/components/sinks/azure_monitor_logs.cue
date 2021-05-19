@@ -4,11 +4,10 @@ components: sinks: azure_monitor_logs: {
 	title: "Azure Monitor Logs"
 
 	classes: {
-		acknowledgements: "disabled"
-		commonly_used:    false
-		delivery:         "at_least_once"
-		development:      "beta"
-		egress_method:    "batch"
+		commonly_used: false
+		delivery:      "best_effort"
+		development:   "beta"
+		egress_method: "batch"
 		service_providers: ["Azure"]
 		stateful: false
 	}

@@ -4,11 +4,10 @@ components: sinks: kafka: {
 	title: "Kafka"
 
 	classes: {
-		acknowledgements: "disabled"
-		commonly_used:    true
-		delivery:         "at_least_once"
-		development:      "stable"
-		egress_method:    "dynamic"
+		commonly_used: true
+		delivery:      "best_effort"
+		development:   "stable"
+		egress_method: "dynamic"
 		service_providers: ["AWS", "Confluent"]
 		stateful: false
 	}

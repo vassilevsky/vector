@@ -4,11 +4,10 @@ components: sinks: aws_kinesis_firehose: components._aws & {
 	title: "AWS Kinesis Firehose"
 
 	classes: {
-		acknowledgements: "disabled"
-		commonly_used:    false
-		delivery:         "at_least_once"
-		development:      "stable"
-		egress_method:    "batch"
+		commonly_used: false
+		delivery:      "best_effort"
+		development:   "stable"
+		egress_method: "batch"
 		service_providers: ["AWS"]
 		stateful: false
 	}

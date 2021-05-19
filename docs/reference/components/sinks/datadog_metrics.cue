@@ -4,7 +4,7 @@ components: sinks: datadog_metrics: {
 	title: "Datadog Metrics"
 
 	classes: sinks._datadog.classes & {
-		acknowledgements: "disabled"
+		delivery: "best_effort"
 	}
 
 	features: {

@@ -13,53 +13,6 @@ well as how we label the stability of our components. Next, you can head over to
 the [components page][pages.components] and use filters to see which components
 support specific guarantees.
 
-## End-to-End Acknowledgement Guarantees
-
-<ul class="connected-list">
-<li>
-
-### Enabled
-
-This indicates that acknowledgements are fully supported for the given
-source or sink component.
-
-For a source, this means that the component is both able to indicate to
-the sender of the events a status code when and if the events are
-delivered at a protocol level, and that the source waits internally
-until this status is available for all the events in a batch before
-reporting that status.
-
-For a sink, this means the component is both able to determine if events
-are accepted by the destination, and communicates this status once
-delivery is complete.
-
-</li>
-<li>
-
-### Disabled
-
-This indicates that some level of acknowledgement is possible but Vector
-does not yet support handling these acknowledgements. For sinks, this
-means that sources which are tracking acknowledgements will see all
-events as being "delivered" once they reach the sink, before they any
-delivery is attempted by after they traverse the rest of the pipeline.
-
-</li>
-<li>
-
-### Not-Applicable
-
-Several sources do not participate in end-to-end acknowledgement of data
-because they are unable to do so due to limitations of the protocol. For
-example, there is second channel through which the `exec` or `stdin`
-sinks can acknowledge events. Similarly the metric "scraper" sources
-like `prometheus_scrape` or `apache_metrics` cannot communicate to the
-remote that the metrics have been processed. These sources are marked as
-having acknowledgements `not-applicable`.
-
-</li>
-</ul>
-
 ## Delivery Guarantees
 
 <ul class="connected-list">
@@ -67,15 +20,22 @@ having acknowledgements `not-applicable`.
 
 ### At-Least-Once
 
-The `at-least-once` delivery guarantee ensures that an [event][docs.data-model]
-received by a Vector component will be delivered at least once. While rare, it
-is possible for an event to be delivered more than once. See the
-[Does Vector support exactly once delivery](#does-vector-support-exactly-once-delivery)
-FAQ below).
+The `at-least-once` delivery guarantee ensures that an
+[event][docs.data-model] received by a Vector component will be
+delivered at least once. For a source, this indicates that it will wait
+for all connected sinks to mark the event as delivered before
+acknowledging receipt of the event. For a sink, this indicates that it
+will attempt to retry the delivery until the events are either accepted
+or rejected and then signal the source with the results of that
+delivery.
+
+While rare, it is possible for an event to be delivered more than
+once. See the [Does Vector support exactly once
+delivery](#does-vector-support-exactly-once-delivery) FAQ below).
 
 <Alert variant="outlined" severity="warning">
 
-In order to achieve at least once delivery between restarts your source must
+In order to achieve at least once delivery between restarts your sink must
 be configured to use `disk` based buffers:
 
 ```toml title="vector.toml"

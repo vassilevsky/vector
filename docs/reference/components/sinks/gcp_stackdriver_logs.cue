@@ -4,11 +4,10 @@ components: sinks: gcp_stackdriver_logs: {
 	title: "GCP Operations (formerly Stackdriver) Logs"
 
 	classes: {
-		acknowledgements: "disabled"
-		commonly_used:    true
-		delivery:         "at_least_once"
-		development:      "beta"
-		egress_method:    "batch"
+		commonly_used: true
+		delivery:      "best_effort"
+		development:   "beta"
+		egress_method: "batch"
 		service_providers: ["GCP"]
 		stateful: false
 	}

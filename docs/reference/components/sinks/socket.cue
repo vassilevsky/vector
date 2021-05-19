@@ -4,11 +4,10 @@ components: sinks: socket: {
 	title: "Socket"
 
 	classes: {
-		acknowledgements: "disabled"
-		commonly_used:    true
-		delivery:         "best_effort"
-		development:      "stable"
-		egress_method:    "stream"
+		commonly_used: true
+		delivery:      "best_effort"
+		development:   "stable"
+		egress_method: "stream"
 		service_providers: []
 		stateful: false
 	}

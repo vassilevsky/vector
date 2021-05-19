@@ -4,10 +4,9 @@ components: sinks: sematext_metrics: {
 	title: "Sematext Metrics"
 
 	classes: {
-		acknowledgements: "disabled"
-		commonly_used:    false
-		delivery:         "at_least_once"
-		development:      "beta"
+		commonly_used: false
+		delivery:      "best_effort"
+		development:   "beta"
 		service_providers: ["Sematext"]
 		egress_method: "batch"
 		stateful:      false

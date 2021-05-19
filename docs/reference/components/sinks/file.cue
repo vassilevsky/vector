@@ -4,9 +4,8 @@ components: sinks: file: {
 	title: "File"
 
 	classes: {
-		acknowledgements: "disabled"
-		commonly_used:    false
-		delivery:         "at_least_once"
+		commonly_used: false
+		delivery:      "best_effort"
 
 		development:   "beta"
 		egress_method: "stream"

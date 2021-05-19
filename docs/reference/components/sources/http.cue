@@ -6,9 +6,8 @@ components: sources: http: {
 	title: "HTTP"
 
 	classes: {
-		acknowledgements: "enabled"
-		commonly_used:    false
-		delivery:         "at_least_once"
+		commonly_used: false
+		delivery:      "at_least_once"
 		deployment_roles: ["aggregator", "sidecar"]
 		development:   "beta"
 		egress_method: "batch"

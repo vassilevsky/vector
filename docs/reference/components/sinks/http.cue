@@ -4,8 +4,7 @@ components: sinks: http: {
 	title: "HTTP"
 
 	classes: {
-		acknowledgements: "enabled"
-		commonly_used:    true
+		commonly_used: true
 		service_providers: []
 		delivery:      "at_least_once"
 		development:   "stable"

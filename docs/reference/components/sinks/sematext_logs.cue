@@ -4,11 +4,10 @@ components: sinks: sematext_logs: {
 	title: "Sematext Logs"
 
 	classes: {
-		acknowledgements: "disabled"
-		commonly_used:    false
-		delivery:         "at_least_once"
-		development:      "stable"
-		egress_method:    "batch"
+		commonly_used: false
+		delivery:      "best_effort"
+		development:   "stable"
+		egress_method: "batch"
 		service_providers: ["Sematext"]
 		stateful: false
 	}

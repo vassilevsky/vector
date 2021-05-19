@@ -10,9 +10,8 @@ components: sources: vector: {
 		"""
 
 	classes: {
-		acknowledgements: "disabled"
-		commonly_used:    false
-		delivery:         "best_effort"
+		commonly_used: false
+		delivery:      "best_effort"
 		deployment_roles: ["aggregator"]
 		development:   "beta"
 		egress_method: "stream"

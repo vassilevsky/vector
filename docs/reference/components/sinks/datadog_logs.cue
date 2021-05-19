@@ -4,7 +4,7 @@ components: sinks: datadog_logs: {
 	title: "Datadog Logs"
 
 	classes: sinks._datadog.classes & {
-		acknowledgements: "enabled"
+		delivery: "at_least_once"
 	}
 
 	features: {

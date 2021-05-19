@@ -8,9 +8,8 @@ components: sources: generator: {
 		"""
 
 	classes: {
-		acknowledgements: "not_applicable"
-		commonly_used:    false
-		delivery:         "at_least_once"
+		commonly_used: false
+		delivery:      "best_effort"
 		deployment_roles: ["daemon", "sidecar"]
 		development:   "stable"
 		egress_method: "stream"

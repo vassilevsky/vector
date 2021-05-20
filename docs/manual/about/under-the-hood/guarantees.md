@@ -18,9 +18,9 @@ support specific guarantees.
 <ul class="connected-list">
 <li>
 
-### At-Least-Once
+### At_Least_Once
 
-The `at-least-once` delivery guarantee ensures that an
+The `at_least_once` delivery guarantee ensures that an
 [event][docs.data-model] received by a Vector component will be
 delivered at least once. For a source, this indicates that it will wait
 for all connected sinks to mark the event as delivered before
@@ -53,19 +53,19 @@ buffer options.
 
 </Alert>
 
-<Jump to="/components/?at-least-once=true">View all at-least-once components</Jump>
+<Jump to="/components/?at_least_once=true">View all at_least_once components</Jump>
 
 </li>
 <li>
 
-### Best-Effort
+### Best_Effort
 
-A `best-effort` delivery guarantee means that a Vector component will make a
+A `best_effort` delivery guarantee means that a Vector component will make a
 best effort to deliver each event, but cannot _guarantee_ delivery. This is
 usually due to limitations of the underlying protocol; which are outside the
 control of Vector.
 
-Note that this is _not_ the same as `at-most-once` delivery, as it is still
+Note that this is _not_ the same as "at most once" delivery, as it is still
 possible for Vector to introduce duplicates under extreme circumstances.
 
 </li>

@@ -23,7 +23,7 @@ support specific guarantees.
 The `at_least_once` delivery guarantee ensures that an
 [event][docs.data-model] received by a Vector component will be
 delivered at least once. For a source, this indicates that it will wait
-for all connected sinks to mark the event as delivered before
+for _all_ connected sinks to mark the event as delivered before
 acknowledging receipt of the event. For a sink, this indicates that it
 will attempt to retry the delivery until the events are either accepted
 or rejected and then signal the source with the results of that

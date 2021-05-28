@@ -13,7 +13,7 @@ components: sources: heroku_logs: {
 
 	classes: {
 		commonly_used: false
-		delivery:      "best_effort"
+		delivery:      "at_least_once"
 		deployment_roles: ["aggregator"]
 		development:   "beta"
 		egress_method: "batch"

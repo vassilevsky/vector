@@ -5,7 +5,7 @@ components: sinks: azure_monitor_logs: {
 
 	classes: {
 		commonly_used: false
-		delivery:      "best_effort"
+		delivery:      "at_least_once"
 		development:   "beta"
 		egress_method: "batch"
 		service_providers: ["Azure"]

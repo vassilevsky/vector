@@ -4,7 +4,7 @@ components: sinks: datadog_metrics: {
 	title: "Datadog Metrics"
 
 	classes: sinks._datadog.classes & {
-		delivery: "best_effort"
+		delivery: "at_least_once"
 	}
 
 	features: {

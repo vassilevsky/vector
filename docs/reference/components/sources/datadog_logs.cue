@@ -11,7 +11,7 @@ components: sources: datadog_logs: {
 
 	classes: {
 		commonly_used: false
-		delivery:      "best_effort"
+		delivery:      "at_least_once"
 		deployment_roles: ["aggregator", "sidecar"]
 		development:   "beta"
 		egress_method: "batch"

@@ -6,10 +6,50 @@ metadata:
   labels:
     {{- include "libvector.labels" . | nindent 4 }}
 data:
+  {{- if .Values.customConfig }}
+  vector.yaml: |
+{{ tpl (toYaml .Values.customConfig) . | indent 4 }}
+  # Included to ensure no duplicate configurations created by deprecated values
+  {{- else if or (not .Values.globalOptions.dataDir) (not .Values.logSchema) (not .Values.vectorApi) }}
+  vector.yaml: |
+    # Docs: https://vector.dev/docs/
+    {{- if not .Values.globalOptions.dataDir }}
+    data_dir: "/vector-data-dir"
+    {{- end }}
+    timezone: local
+    healthchecks:
+      enabled: true
+      require_healthy: false
+    {{- if not .Values.logSchema }}
+    log_schema:
+      host_key: host
+      message_key: message
+      source_type_key: source_type
+      timestamp_key: timestamp
+    {{- end }}
+    {{- if not .Values.vectorApi }}
+    api:
+      address: 0.0.0.0:8686
+      enabled: true
+      playground: false
+    {{- end }}
+    {{- if .Values.sources }}
+    sources:
+    {{- end }}
+    {{- if .Values.transforms }}
+    transforms:
+    {{- end }}
+    {{- if .Values.sinks }}
+    sinks:
+    {{- end }}
+  {{- end }}
+  {{- if or (.Values.globalOptions.dataDir) (.Values.logSchema) (.Values.vectorApi) }}
   # We leave `vector.toml` file name available to let externally managed config
   # maps to provide it.
   managed.toml: |
+    {{- if or (.Values.globalOptions.dataDir) (.Values.logSchema) (.Values.vectorApi) }}
     {{- include "libvector.vectorConfigHeader" . | nindent 4 -}}
+    {{- end }}
 
     {{- with .Values.vectorSource }}
     {{- if .enabled }}
@@ -25,5 +65,5 @@ data:
     {{- include "libvector.metricsConfigPartial" . | nindent 4  }}
 
     {{- include "libvector.vectorTopology" .Values | nindent 4 -}}
-
+  {{- end }}
 {{- end }}

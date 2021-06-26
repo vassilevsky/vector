@@ -179,11 +179,47 @@ service:
 # of using a generated one.
 existingConfigMap: ""
 
+customConfig: {}
+  #  data_dir: "/vector-data-dir"
+  #  timezone: local
+  #  healthchecks:
+  #    enabled: true
+  #    require_healthy: false
+  #  log_schema:
+  #    host_key: host
+  #    message_key: message
+  #    source_type_key: source_type
+  #    timestamp_key: timestamp
+  #  api:
+  #    address: 0.0.0.0:8686
+  #    enabled: true
+  #    playground: false
+  #  sources:
+  #    vector:
+  #      type: vector
+  #      address: 0.0.0.0:9000
+  #      version: 2
+  #  transforms:
+  #    sample:
+  #      type: sample
+  #      inputs:
+  #      - vector
+  #      rate: 10
+  #  sinks:
+  #    stdout:
+  #      type: console
+  #      inputs:
+  #      - sample
+  #      encoding:
+  #        codec: json
+
+# DEPRECATED
 # Global parts of the generated `vector` config.
 globalOptions:
   # Specifies the (in-container) data dir used by `vector`.
   dataDir: "/vector-data-dir"
 
+# DEPRECATED
 # Schema part of the generated `vector` config.
 logSchema:
   hostKey: "host"
@@ -191,6 +227,7 @@ logSchema:
   sourceTypeKey: "source_type"
   timestampKey: "timestamp"
 
+# DEPRECATED
 # The Vector API.
 # Will be disabled by default.
 vectorApi:
@@ -201,6 +238,7 @@ vectorApi:
   # Enable or disable the built-in GraphQL Playground (a web IDE for working on GraphQL queries).
   playground: true
 
+# DEPRECATED
 # The "built-in" vector source, for accepting logs from the vector agents.
 # Will be added by default, unless explicitly disabled.
 vectorSource:
@@ -220,6 +258,7 @@ vectorSource:
   # Raw TOML config to embed at the vector source (deprecated).
   rawConfig: null
 
+# DEPRECATED
 # The "built-in" internal metrics source emitting Vector's internal opertaional
 # metrics.
 internalMetricsSource:
@@ -233,6 +272,7 @@ internalMetricsSource:
   # Raw TOML config to embed at the internal metrics source (deprecated).
   rawConfig: null
 
+# DEPRECATED
 # The "built-in" prometheus sink exposing metrics in the Prometheus scraping
 # format.
 # When using this "built-in" sink, we automatically configure container ports,
@@ -281,6 +321,7 @@ prometheusSink:
     # metricRelabelings to include in the `PodMonitor`.
     metricRelabelings: []
 
+# DEPRECATED
 # Sources to add to the generated `vector` config
 sources: {}
   # source_name:
@@ -288,6 +329,7 @@ sources: {}
   #   rawConfig: |
   #     option = "value"
 
+# DEPRECATED
 # Transforms to add to the generated `vector` config.
 transforms: {}
   # transform_name:
@@ -296,6 +338,7 @@ transforms: {}
   #   rawConfig: |
   #     option = "value"
 
+# DEPRECATED
 # Sinks to add to the generated `vector` config.
 sinks: {}
   # sink_name:

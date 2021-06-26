@@ -90,14 +90,21 @@ The common header for Vector ConfigMaps.
 # Configuration for vector.
 # Docs: https://vector.dev/docs/
 
+{{- if not .Values.customConfig.data_dir }}
 data_dir = "{{ .Values.globalOptions.dataDir }}"
+{{- end }}
 
+{{- if not .Values.customConfig.api }}
+{{- with .Values.vectorApi }}
 [api]
-  enabled = {{ .Values.vectorApi.enabled }}
-  address = {{ .Values.vectorApi.address | quote }}
-  playground = {{ .Values.vectorApi.playground }}
+  enabled = {{ .enabled }}
+  address = {{ .address | quote }}
+  playground = {{ .playground }}
 {{- printf "\n" -}}
+{{- end }}
+{{- end }}
 
+{{- if not .Values.customConfig.log_schema }}
 {{- with .Values.logSchema }}
 [log_schema]
   host_key = "{{ .hostKey }}"
@@ -105,5 +112,6 @@ data_dir = "{{ .Values.globalOptions.dataDir }}"
   source_type_key = "{{ .sourceTypeKey }}"
   timestamp_key = "{{ .timestampKey }}"
   {{- printf "\n" -}}
+{{- end }}
 {{- end }}
 {{- end }}

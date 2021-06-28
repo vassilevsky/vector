@@ -7,7 +7,6 @@ Internal metrics are common, so we share and reuse the definition.
 {{- define "libvector.metricsConfigPartial" -}}
 
 {{- $values := .Values -}}
-
 {{- $prometheusInputs := .prometheusInputs -}}
 {{- with $values.internalMetricsSource }}
 {{- if .enabled }}

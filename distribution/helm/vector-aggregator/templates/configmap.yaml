@@ -10,7 +10,7 @@ data:
   vector.yaml: |
 {{ tpl (toYaml .Values.customConfig) . | indent 4 }}
   # Included to ensure no duplicate configurations created by deprecated values
-  {{- else if or (not .Values.globalOptions.dataDir) (not .Values.logSchema) (not .Values.vectorApi) }}
+  {{- else }}
   vector.yaml: |
     # Docs: https://vector.dev/docs/
     {{- if not .Values.globalOptions.dataDir }}
@@ -33,8 +33,14 @@ data:
       enabled: true
       playground: false
     {{- end }}
-    {{- if .Values.sources }}
+    {{- if or (.Values.vectorSource.enabled) (.Values.sources) }}
     sources:
+    {{- if .Values.vectorSource.enabled }}
+      {{- .Values.vectorSource.sourceId | nindent 6 }}:
+        type: vector
+        address: {{ .Values.vectorSource.listenAddress }}:{{ .Values.vectorSource.listenPort }}
+        {{ toYaml .Values.vectorSource.config }}
+    {{- end }}
     {{- end }}
     {{- if .Values.transforms }}
     transforms:
@@ -51,19 +57,6 @@ data:
     {{- include "libvector.vectorConfigHeader" . | nindent 4 -}}
     {{- end }}
 
-    {{- with .Values.vectorSource }}
-    {{- if .enabled }}
-    # Accept logs from Vector agents.
-    {{- $value := merge (dict) .config -}}
-    {{- $_ := set $value "type" "vector" -}}
-    {{- $_ := set $value "address" (printf "%v:%v" .listenAddress .listenPort) -}}
-    {{- $_ := set $value "rawConfig" .rawConfig -}}
-    {{- tuple .sourceId $value | include "libvector.vectorSourceConfig" | nindent 4 -}}
-    {{- end }}
-    {{- end }}
-
     {{- include "libvector.metricsConfigPartial" . | nindent 4  }}
-
-    {{- include "libvector.vectorTopology" .Values | nindent 4 -}}
   {{- end }}
 {{- end }}

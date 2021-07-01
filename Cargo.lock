@@ -8509,6 +8509,7 @@ dependencies = [
  "base64 0.13.0",
  "bytes 1.0.1",
  "chrono",
+ "chrono-tz",
  "cidr-utils",
  "criterion",
  "csv",

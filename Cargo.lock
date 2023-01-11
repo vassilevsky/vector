@@ -5171,9 +5171,9 @@ dependencies = [
  "indexmap",
  "nom 6.1.2",
  "num_enum",
- "prost",
+ "prost 0.7.0",
  "prost-build",
- "prost-types",
+ "prost-types 0.11.6",
  "shared",
  "snafu",
 ]
@@ -5217,7 +5217,17 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9e6984d2f1a23009bd270b8bb56d0926810a3d483f59c987d77969e9d8e840b2"
 dependencies = [
  "bytes 1.0.1",
- "prost-derive",
+ "prost-derive 0.7.0",
+]
+
+[[package]]
+name = "prost"
+version = "0.11.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "21dc42e00223fc37204bd4aa177e69420c604ca4a183209a8f9de30c6d934698"
+dependencies = [
+ "bytes 1.0.1",
+ "prost-derive 0.11.6",
 ]
 
 [[package]]
@@ -5232,8 +5242,8 @@ dependencies = [
  "log",
  "multimap",
  "petgraph",
- "prost",
- "prost-types",
+ "prost 0.7.0",
+ "prost-types 0.7.0",
  "tempfile",
  "which 4.1.0",
 ]
@@ -5252,13 +5262,36 @@ dependencies = [
 ]
 
 [[package]]
+name = "prost-derive"
+version = "0.11.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8bda8c0881ea9f722eb9629376db3d0b903b462477c1aafcb0566610ac28ac5d"
+dependencies = [
+ "anyhow",
+ "itertools 0.10.1",
+ "proc-macro2 1.0.26",
+ "quote 1.0.9",
+ "syn 1.0.72",
+]
+
+[[package]]
 name = "prost-types"
 version = "0.7.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b518d7cdd93dab1d1122cf07fa9a60771836c668dde9d9e2a139f957f0d9f1bb"
 dependencies = [
  "bytes 1.0.1",
- "prost",
+ "prost 0.7.0",
+]
+
+[[package]]
+name = "prost-types"
+version = "0.11.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a5e0526209433e96d83d750dd81a99118edbc55739e7e61a46764fd2ad537788"
+dependencies = [
+ "bytes 1.0.1",
+ "prost 0.11.6",
 ]
 
 [[package]]
@@ -5278,9 +5311,9 @@ dependencies = [
  "native-tls",
  "nom 6.1.2",
  "pem",
- "prost",
+ "prost 0.7.0",
  "prost-build",
- "prost-derive",
+ "prost-derive 0.7.0",
  "rand 0.8.4",
  "regex",
  "tokio",
@@ -7552,8 +7585,8 @@ dependencies = [
  "hyper",
  "percent-encoding",
  "pin-project 1.0.7",
- "prost",
- "prost-derive",
+ "prost 0.7.0",
+ "prost-derive 0.7.0",
  "tokio",
  "tokio-rustls",
  "tokio-stream",
@@ -8238,9 +8271,9 @@ dependencies = [
  "postgres-openssl",
  "pretty_assertions",
  "prometheus-parser",
- "prost",
+ "prost 0.7.0",
  "prost-build",
- "prost-types",
+ "prost-types 0.11.6",
  "pulsar",
  "quickcheck",
  "rand 0.8.4",
@@ -8381,9 +8414,9 @@ dependencies = [
  "pest_derive",
  "pin-project 1.0.7",
  "pretty_assertions",
- "prost",
+ "prost 0.7.0",
  "prost-build",
- "prost-types",
+ "prost-types 0.11.6",
  "quickcheck",
  "regex",
  "rlua",
